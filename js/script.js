@@ -484,7 +484,6 @@ var recipes = [
   },
 ];
 
-
 var recipeImage = document.getElementById("recipe-image");
 var recipeRating = document.getElementById("recipe-rating");
 var recipeReviews = document.getElementById("recipe-reviews");
@@ -507,8 +506,16 @@ var carbon = document.getElementById("carbon");
 var fat = document.getElementById("fat");
 var fiber = document.getElementById("fiber");
 var sodium = document.getElementById("sodium");
+var currentIndex = -1;
+
 function updateRecipe() {
-  var randomIndex = Math.floor(Math.random() * recipes.length);
+  var randomIndex;
+
+  do {
+    randomIndex = Math.floor(Math.random() * recipes.length);
+  } while (randomIndex === currentIndex);
+
+  currentIndex = randomIndex;
   var recipe = recipes[randomIndex];
 
   recipeImage.src = recipe.image;
@@ -521,7 +528,6 @@ function updateRecipe() {
   cuisine.innerHTML = recipe.cuisine;
   recipeName.innerHTML = recipe.name;
   recipeDescription.innerHTML = recipe.description;
-
 
   ingredientsList.innerHTML = "";
   for (var i = 0; i < recipe.ingredients.length; i++) {
@@ -538,7 +544,7 @@ function updateRecipe() {
     chefsTipsContainer.innerHTML += `
       <div class="d-flex border-color-orange bg-red mb-3 p-3 rounded-3">
         <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
-        <p class="text-black text-opacity-75">${recipe.chefsTips[i]}</p>
+        <p class="text-black text-opacity-75 mb-0">${recipe.chefsTips[i]}</p>
       </div>
     `;
   }
@@ -555,6 +561,7 @@ function updateRecipe() {
   fat.innerHTML = recipe.nutrition.Fat;
   fiber.innerHTML = recipe.nutrition.Fiber;
   sodium.innerHTML = recipe.nutrition.Sodium;
+  scrollTo(0, 0);
 }
 
 updateRecipe();

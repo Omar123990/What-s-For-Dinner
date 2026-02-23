@@ -1,5 +1,3 @@
-
-
 :root {
   --bg-color-red: #fef2f2;
   --bg-color-yellow: #fef9c2;
@@ -73,8 +71,9 @@
 }
 body {
   background-color: #fffbea;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
 section {
   margin-top: 0px;
