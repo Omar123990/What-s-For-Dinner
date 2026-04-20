@@ -482,86 +482,231 @@ var recipes = [
       "Add extra lemon for bright, fresh taste",
     ],
   },
+  {
+    image: "images/Grilled-Salmon.jpg",
+    rating: "4.9",
+    reviews: "(412 reviews)",
+    prepTime: "15 min",
+    cookTime: "12 min",
+    servings: "2 people",
+    difficulty: "Medium",
+    cuisine: "Seafood",
+    name: "Grilled Salmon",
+    description:
+      "Perfectly seared salmon with lemon butter sauce and crisp asparagus",
+    ingredients: [
+      "2 salmon fillets (200g each)",
+      "1 bunch green asparagus",
+      "2 tablespoons unsalted butter",
+      "2 cloves garlic, minced",
+      "1 lemon, sliced",
+      "1 tablespoon olive oil",
+      "Salt and black pepper to taste",
+      "Fresh dill for garnish",
+    ],
+    instructions: [
+      "Season salmon fillets with salt, pepper, and olive oil.",
+      "Heat a grill pan over medium-high heat. Place salmon skin-side down for 5-6 minutes.",
+      "Flip the salmon and add asparagus to the pan. Cook for another 5 minutes.",
+      "In a small bowl, mix melted butter with minced garlic and lemon juice.",
+      "Pour the garlic butter over the salmon and asparagus, then serve warm.",
+    ],
+    nutrition: {
+      Calories: "450 kcal",
+      Protein: "38g",
+      Carbohydrates: "8g",
+      Fat: "28g",
+      Fiber: "4g",
+      Sodium: "380mg",
+    },
+    chefsTips: [
+      "Pat the salmon dry before seasoning for a crispier skin",
+      "Don't move the salmon until it naturally releases from the pan",
+      "Use fresh asparagus for the best crunch",
+      "Add a splash of honey to the butter for a sweet-savory balance",
+    ],
+  },
+  {
+    image: "images/mushroom-risotto.jpg",
+    rating: "4.6",
+    reviews: "(285 reviews)",
+    prepTime: "10 min",
+    cookTime: "30 min",
+    servings: "3 people",
+    difficulty: "Hard",
+    cuisine: "Italian",
+    name: "Mushroom Risotto",
+    description: "Rich and creamy Arborio rice with earthy wild mushrooms",
+    ingredients: [
+      "300g Arborio rice",
+      "500g mixed mushrooms, sliced",
+      "1.2 liters warm vegetable stock",
+      "1 small onion, finely diced",
+      "1/2 cup grated Parmesan cheese",
+      "2 tablespoons butter",
+      "1/2 cup white wine (optional)",
+      "Fresh thyme leaves",
+    ],
+    instructions: [
+      "Sauté mushrooms in a large pan until golden, then remove half for garnish.",
+      "In the same pan, cook onions in butter until soft. Add rice and toast for 2 minutes.",
+      "Add wine and stir until absorbed. Add stock one ladle at a time, stirring constantly.",
+      "Continue adding stock until rice is creamy but still has a bite (Al Dente).",
+      "Stir in Parmesan, butter, and remaining mushrooms. Serve immediately.",
+    ],
+    nutrition: {
+      Calories: "410 kcal",
+      Protein: "12g",
+      Carbohydrates: "65g",
+      Fat: "14g",
+      Fiber: "5g",
+      Sodium: "550mg",
+    },
+    chefsTips: [
+      "Keep your stock warm throughout the process",
+      "Stirring is key - it releases the starch from the rice",
+      "Don't wash the rice before cooking; you need the starch for creaminess",
+      "Finish with a drizzle of truffle oil if available",
+    ],
+  },
+  {
+    image: "images/tikka-masala.jpg",
+    rating: "4.8",
+    reviews: "(610 reviews)",
+    prepTime: "25 min",
+    cookTime: "20 min",
+    servings: "4 people",
+    difficulty: "Medium",
+    cuisine: "Indian",
+    name: "Chicken Tikka Masala",
+    description:
+      "Tender grilled chicken chunks in a spicy, creamy tomato sauce",
+    ingredients: [
+      "600g chicken breast, cubed",
+      "1 cup plain yogurt (for marinade)",
+      "2 cups tomato puree",
+      "1/2 cup heavy cream",
+      "1 large onion, chopped",
+      "3 cloves garlic, minced",
+      "2 tablespoons Garam Masala",
+      "Fresh cilantro for garnish",
+    ],
+    instructions: [
+      "Marinate chicken in yogurt and half the spices for at least 30 minutes.",
+      "Cook chicken in a hot pan until charred and cooked through, then set aside.",
+      "Sauté onions and garlic, then add tomato puree and remaining spices.",
+      "Simmer the sauce for 10 minutes, then stir in heavy cream.",
+      "Add the chicken back to the sauce, simmer for 5 minutes, and garnish with cilantro.",
+    ],
+    nutrition: {
+      Calories: "580 kcal",
+      Protein: "45g",
+      Carbohydrates: "18g",
+      Fat: "32g",
+      Fiber: "3g",
+      Sodium: "740mg",
+    },
+    chefsTips: [
+      "Marinate the chicken overnight for the best texture",
+      "Use ginger-garlic paste for a more authentic flavor",
+      "Serve with garlic naan or basmati rice",
+      "Adjust the chili powder to your preferred heat level",
+    ],
+  },
+];
+const recipeElements = {
+  image: document.getElementById("recipe-image"),
+  rating: document.getElementById("recipe-rating"),
+  reviews: document.getElementById("recipe-reviews"),
+  prepTime: document.getElementById("prep-time"),
+  cookTime: document.getElementById("cook-time"),
+  servings: document.getElementById("servings"),
+  difficulty: document.getElementById("difficulty"),
+  cuisine: document.getElementById("cuisine"),
+  name: document.getElementById("recipe-name"),
+  description: document.getElementById("recipe-description"),
+  ingredientsList: document.getElementById("tab-ingredients-content"),
+  instructionsList: document.getElementById("tab-instructions-content"),
+  chefsTipsContainer: document.getElementById("tab-chefs-content"),
+  longPrepMsg: document.getElementById("long-prep-msg"),
+  feedbackMsg: document.getElementById("feedback-msg"), // العنصر الجديد
+  nutrition: {
+    calories: document.getElementById("calories"),
+    protein: document.getElementById("protein"),
+    carbon: document.getElementById("carbon"),
+    fat: document.getElementById("fat"),
+    fiber: document.getElementById("fiber"),
+    sodium: document.getElementById("sodium"),
+  },
+};
+
+let currentIndex = -1;
+const messages = [
+  "Bon Appétit!",
+  "Great Choice!",
+  "Yum! Try this one.",
+  "Looks delicious!",
+  "Enjoy your cooking!",
 ];
 
-var recipeImage = document.getElementById("recipe-image");
-var recipeRating = document.getElementById("recipe-rating");
-var recipeReviews = document.getElementById("recipe-reviews");
-var prepTime = document.getElementById("prep-time");
-var cookTime = document.getElementById("cook-time");
-var servings = document.getElementById("servings");
-var difficulty = document.getElementById("difficulty");
-var cuisine = document.getElementById("cuisine");
-var recipeName = document.getElementById("recipe-name");
-var recipeDescription = document.getElementById("recipe-description");
-var ingredientsList = document.getElementById("tab-ingredients-content");
-var instructionsList = document.getElementById("tab-instructions-content");
-var nutritionContainer = document.getElementById("tab-nutrition-content");
-var chefsTipsContainer = document.getElementById("tab-chefs-content");
-var nextRecipeBtn = document.getElementById("next-recipe-btn");
-var longPrepMsg = document.getElementById("long-prep-msg");
-var calories = document.getElementById("calories");
-var protein = document.getElementById("protein");
-var carbon = document.getElementById("carbon");
-var fat = document.getElementById("fat");
-var fiber = document.getElementById("fiber");
-var sodium = document.getElementById("sodium");
-var currentIndex = -1;
-
-function updateRecipe() {
-  var randomIndex;
-
+const updateRecipe = () => {
+  let randomIndex;
   do {
     randomIndex = Math.floor(Math.random() * recipes.length);
   } while (randomIndex === currentIndex);
 
   currentIndex = randomIndex;
-  var recipe = recipes[randomIndex];
+  const recipe = recipes[randomIndex];
 
-  recipeImage.src = recipe.image;
-  recipeRating.innerHTML = recipe.rating;
-  recipeReviews.innerHTML = recipe.reviews;
-  prepTime.innerHTML = recipe.prepTime;
-  cookTime.innerHTML = recipe.cookTime;
-  servings.innerHTML = recipe.servings;
-  difficulty.innerHTML = recipe.difficulty;
-  cuisine.innerHTML = recipe.cuisine;
-  recipeName.innerHTML = recipe.name;
-  recipeDescription.innerHTML = recipe.description;
+  recipeElements.image.src = recipe.image;
+  recipeElements.name.textContent = recipe.name;
+  recipeElements.description.textContent = recipe.description;
+  recipeElements.rating.textContent = recipe.rating;
+  recipeElements.reviews.textContent = recipe.reviews;
+  recipeElements.prepTime.textContent = recipe.prepTime;
+  recipeElements.cookTime.textContent = recipe.cookTime;
+  recipeElements.servings.textContent = recipe.servings;
+  recipeElements.difficulty.textContent = recipe.difficulty;
+  recipeElements.cuisine.textContent = recipe.cuisine;
 
-  ingredientsList.innerHTML = "";
-  for (var i = 0; i < recipe.ingredients.length; i++) {
-    ingredientsList.innerHTML += "<li>" + recipe.ingredients[i] + "</li>";
-  }
+  recipeElements.ingredientsList.innerHTML = recipe.ingredients
+    .map((ing) => `<li>${ing}</li>`)
+    .join("");
+  recipeElements.instructionsList.innerHTML = recipe.instructions
+    .map((inst) => `<li>${inst}</li>`)
+    .join("");
 
-  instructionsList.innerHTML = "";
-  for (var i = 0; i < recipe.instructions.length; i++) {
-    instructionsList.innerHTML += "<li>" + recipe.instructions[i] + "</li>";
-  }
+  recipeElements.chefsTipsContainer.innerHTML = recipe.chefsTips
+    .map(
+      (tip) => `
+    <div class="d-flex border-color-orange bg-red mb-3 p-3 rounded-3">
+      <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
+      <p class="text-black text-opacity-75 mb-0">${tip}</p>
+    </div>
+  `,
+    )
+    .join("");
 
-  chefsTipsContainer.innerHTML = "";
-  for (var i = 0; i < recipe.chefsTips.length; i++) {
-    chefsTipsContainer.innerHTML += `
-      <div class="d-flex border-color-orange bg-red mb-3 p-3 rounded-3">
-        <i class="fa-solid fa-circle-check align-self-center me-2 color-yellow fw-700"></i>
-        <p class="text-black text-opacity-75 mb-0">${recipe.chefsTips[i]}</p>
-      </div>
-    `;
-  }
+  recipeElements.longPrepMsg.style.display =
+    parseInt(recipe.cookTime) > 45 ? "block" : "none";
 
-  if (parseInt(recipe.cookTime) > 45) {
-    longPrepMsg.style.display = "block";
-  } else {
-    longPrepMsg.style.display = "none";
-  }
+  const { nutrition } = recipe;
+  recipeElements.nutrition.calories.textContent = nutrition.Calories;
+  recipeElements.nutrition.protein.textContent = nutrition.Protein;
+  recipeElements.nutrition.carbon.textContent = nutrition.Carbohydrates;
+  recipeElements.nutrition.fat.textContent = nutrition.Fat;
+  recipeElements.nutrition.fiber.textContent = nutrition.Fiber;
+  recipeElements.nutrition.sodium.textContent = nutrition.Sodium;
 
-  calories.innerHTML = recipe.nutrition.Calories;
-  protein.innerHTML = recipe.nutrition.Protein;
-  carbon.innerHTML = recipe.nutrition.Carbohydrates;
-  fat.innerHTML = recipe.nutrition.Fat;
-  fiber.innerHTML = recipe.nutrition.Fiber;
-  sodium.innerHTML = recipe.nutrition.Sodium;
-  scrollTo(0, 0);
-}
+  const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+  recipeElements.feedbackMsg.textContent = randomMsg;
+  recipeElements.feedbackMsg.style.opacity = "1";
+
+  setTimeout(() => {
+    recipeElements.feedbackMsg.style.opacity = "0";
+  }, 2000);
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 updateRecipe();

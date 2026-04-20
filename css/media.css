@@ -42,3 +42,114 @@
     min-height: auto !important;
   }
 }
+@media (max-width: 768px) {
+  .p-40 {
+    padding: 1.5rem !important;
+  }
+
+  .custom-list li,
+  .steps-list li {
+    font-size: 14px !important;
+  }
+
+  .custom-list li::before {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  .steps-list li::before {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .bg-button-liner {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  main section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .rounded-left-bottom {
+    border-radius: 1rem !important; 
+  }
+  .navbar-brand h1 {
+    font-size: 1rem !important;
+  }
+
+  .navbar-brand p {
+    font-size: 0.75rem !important;
+    display: block !important;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 1rem !important;
+    border: 1px solid #eee !important;
+  }
+
+  .navbar-collapse .navbar-nav {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    justify-content: flex-start !important;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8f9fa;
+  }
+
+  .w-h-36 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .pb-x-y div {
+    font-size: 0.8rem !important;
+  }
+  .px-y-a {
+    padding: 0.25rem 0.6rem !important;
+    top: 12px !important;
+    left: 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .pb-x-y {
+    padding: 0.6rem 0.4rem !important;
+    bottom: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  .pb-x-y .fa-xl {
+    font-size: 1rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .pb-x-y p.text-secondary {
+    font-size: 0.65rem !important;
+    line-height: 1 !important;
+  }
+
+  .pb-x-y p.fw-bolder {
+    font-size: 0.8rem !important;
+    margin-top: 2px !important;
+  }
+  footer p {
+    font-size: 14px;
+  }
+}

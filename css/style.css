@@ -16,6 +16,14 @@
   --color-border: #ffb900;
   --color-check: #e17100;
 }
+::selection {
+  background-color: var(--color-orange);
+  color: white;
+}
+::-moz-selection {
+  background-color: var(--color-orange);
+  color: white;
+}
 .bg-blue-icon {
   background-color: #dbeafe;
 }
@@ -173,6 +181,10 @@ ul.nav {
 .nav-link:hover {
   --bs-nav-link-hover-color: #364153;
 }
+.nav-link:active {
+  transform: scale(0.95);
+  transition: 0.1s;
+}
 .custom-list {
   list-style: none;
   padding: 0;
@@ -268,4 +280,49 @@ ul.nav {
 }
 .nutrition-block span {
   white-space: normal !important;
+}
+figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+  border-radius: 1rem;
+}
+
+.hover-orange {
+  transition: color 0.3s ease;
+}
+
+.hover-orange:hover {
+  color: var(--color-orange) !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-box::-webkit-scrollbar,
+.scroll-list::-webkit-scrollbar,
+.steps-list::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-box, .scroll-list, .steps-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

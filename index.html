@@ -11,6 +11,12 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#FF6B00" />
+    <meta property="og:title" content="What's For Dinner - Daily Recipes" />
+    <meta property="og:image" content="images/og-preview.jpg" />
+    <meta
+      property="og:description"
+      content="Find your daily meal inspiration in seconds."
+    />
 
     <script>
       if ("serviceWorker" in navigator) {
@@ -145,6 +151,7 @@
                         class="bg-blue color-blue p-4-12 rounded-4"
                       ></span>
                     </div>
+                    <div id="feedback-msg" class="color-orange fw-bold text-center mb-2" style="transition: opacity 0.5s; opacity: 0;"></div>
                     <h2 id="recipe-name" class="fw-bolder"></h2>
                     <p
                       id="recipe-description"
@@ -474,6 +481,44 @@
           </div>
         </div>
       </section>
+      <footer
+        class="py-4 mt-5 border-top border-2"
+        style="background-color: #fff8ec"
+      >
+        <div class="container text-center">
+          <p class="mb-2 text-secondary">
+            Designed & Developed with
+            <i class="fa-solid fa-heart text-danger"></i> by
+            <span class="fw-bold color-orange">Omar Abdalgilil</span>
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a
+              href="https://github.com/Omar123990"
+              target="_blank"
+              class="text-secondary hover-orange"
+            >
+              <i class="fa-brands fa-github fa-lg"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/omar-abdalgilil-7b162b374"
+              target="_blank"
+              class="text-secondary hover-orange"
+            >
+              <i class="fa-brands fa-linkedin fa-lg"></i>
+            </a>
+            <a
+              href="https://wa.me/+201224084982"
+              target="_blank"
+              class="text-secondary hover-orange"
+            >
+              <i class="fa-brands fa-whatsapp fa-lg"></i>
+            </a>
+          </div>
+          <small class="text-muted mt-3 d-block"
+            >© 2026 What's For Dinner. All rights reserved.</small
+          >
+        </div>
+      </footer>
     </main>
 
     <script src="js/bootstrap.bundle.min.js"></script>
